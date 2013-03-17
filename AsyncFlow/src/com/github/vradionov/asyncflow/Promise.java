@@ -91,6 +91,13 @@ public class Promise<T> {
         return value;
     }
 
+	public Exception getException() {
+		if (!isRealized() || exception == null) {
+			throw new IllegalStateException("promise is not realized or have exception");
+		}
+		return exception;
+	}
+
   
 
     
